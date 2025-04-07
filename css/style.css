@@ -39,7 +39,49 @@
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+html, body {
+    height: 100%; /* Ensures the full height of the page */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+.page, .js-fullheight {
+    min-height: 100vh; /* Ensures at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
 
+.home-slider, .slider-item {
+    height: 100vh; /* Ensures each slider item covers full viewport height */
+    width: 100vw; /* Ensures full viewport width */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .home-slider, .slider-item {
+        height: auto; /* Adjust height for smaller devices */
+    }
+
+    h1, h2, h3, .btn {
+        font-size: smaller; /* Smaller font sizes on small devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar, .footer {
+        flex-direction: column; /* Stack navbar and footer items vertically */
+    }
+
+    .home-slider, .slider-item {
+        padding: 15px; /* Adds padding for smaller devices */
+    }
+
+    h1, h2, h3 {
+        font-size: 1em; /* Even smaller font sizes for very small devices */
+    }
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
